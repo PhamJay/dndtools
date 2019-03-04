@@ -8,9 +8,11 @@ def main():
     print("select the encounter you want to choose from below: ")
     enc = ecnounter_finder.main()
     enc_num = int(input("encounter number: "))
+    path = enc[enc_num]
+    split = path.split("\\") #enc[enum] is encounter\"name", when only "name" is needed. Therefore, Encounter.load would break if using it
     playable_encounter = encounter_generator.PlayableEncouter.from_encounter(
         load.load_files(),
-        encounter_generator.Encounter.load(enc[enc_num])
+        encounter_generator.Encounter.load(split[1])
     )
     display = encounter_display.Display(playable_encounter)
     inp = encounter_input.EncounterInput(playable_encounter, display)

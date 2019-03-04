@@ -22,7 +22,8 @@ def main():
 def display():
     data = main()
     inp = input("select encounter to describe")
-    with open(data[int(inp)], "r") as f:
+    split = data[int(inp)].split("\\") #data[int(inp)] is encounter\"name", when only "name" is needed. Therefore, the string is split
+    with open(split[1], "r") as f:
         print(json.dumps(json.load(f), indent=4))
 
 if __name__ == '__main__':

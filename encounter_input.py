@@ -7,14 +7,14 @@ help_msg = """
 (d) damage <to> <amount> deals damage to the specified creature
 (h) heal <to> <amount> heals the specified creature
 (u) undo undoes the last action
-(E) end ends the encounter with prompt
-(R) roll <dice> should roll a dice in the format of <amnt>d<eyes>
+(e) end ends the encounter with prompt
+(r) roll <dice> should roll a dice in the format of <amnt>d<eyes>
 (n) next continues to the next turn with a prompt
 (more) <creature> shows details to creature
 (help, ?) shows help dialog
 """
 
-short_help = "(s)how, (d)amage, (h)eal, (u)ndo, (E)nd, (R)oll, (n)ext, more #, (?)"
+short_help = "(s)how, (d)amage, (h)eal, (u)ndo, (e)nd, (r)oll, (n)ext, more #, (?)"
 
 
 def promptYN(msg="are you sure?[y/N] "):
@@ -157,8 +157,8 @@ class EncounterInput:
             ["d", "damage", self.damage],
             ["h", "heal", self.heal],
             ["u", "undo", self.undo],
-            ["E", "end", self.end],
-            ["R", "roll", self.roll],
+            ["e", "end", self.end],
+            ["r", "roll", self.roll],
             ["n", "next", self.next],
             ["m", "more", self.more],
             ["help", "?", self.help]
